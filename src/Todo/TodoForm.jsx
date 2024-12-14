@@ -9,9 +9,7 @@ const TodoForm = ({ onAddTodo }) => {
   };
 
   const handleFormSubmit = (event) => {
-    event.preventDefault();
-    console.log("inputValue===========>",inputValue);
-    
+    event.preventDefault();    
     onAddTodo(inputValue);
     setInputValue({ id: "", content: "", checked: false });
   };
@@ -22,7 +20,7 @@ const TodoForm = ({ onAddTodo }) => {
         <div>
           <input
             type="text"
-            className="todo-input"
+            className="todo-input "
             autoComplete="off"
             value={inputValue.content}
             onChange={(event) => handleInputChange(event.target.value)}
