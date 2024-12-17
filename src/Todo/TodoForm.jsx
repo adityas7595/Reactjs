@@ -1,15 +1,15 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
+import Pokemon from "../Pokemon/Pokemon";
 const TodoForm = ({ onAddTodo }) => {
   const [inputValue, setInputValue] = useState({});
 
   const handleInputChange = (value) => {
     setInputValue({ id: value, content: value, checked: false });
-    
   };
 
   const handleFormSubmit = (event) => {
-    event.preventDefault();    
+    event.preventDefault();
     onAddTodo(inputValue);
     setInputValue({ id: "", content: "", checked: false });
   };
@@ -31,9 +31,14 @@ const TodoForm = ({ onAddTodo }) => {
             Add Task
           </button>
         </div>
+        <div>
+          <button className="todo-btn pokimon">
+            <Link to="/pokemon"> Pokemon</Link>
+          </button>
+        </div>
       </form>
     </section>
   );
 };
 
-export default TodoForm
+export default TodoForm;

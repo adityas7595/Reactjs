@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import Todo from './Todo/Todo'
+import "./App.css";
+import Pokemon from "./Pokemon/Pokemon";
+import Todo from "./Todo/Todo";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <Todo/>
-  )
+    <Routes>
+      <Route path="/" element={<Todo />} />
+      <Route path="/pokemon" element={<Pokemon />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
